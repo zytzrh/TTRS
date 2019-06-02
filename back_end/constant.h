@@ -41,7 +41,7 @@
 #define  FILENAME 100
 
 //用户缓存区大小
-#define  UBSIZE 100
+#define  UBSIZE 10000
 
 //车站缓存区大小
 #define  STBSIZE 300
@@ -52,7 +52,7 @@
 
 #define  TicketBppSIZE 4096
 
-#define  BUFFERSIZE  500
+#define  BUFFERSIZE  50000
 
 #define   REMAINSIZE 800
 
