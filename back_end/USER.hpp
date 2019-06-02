@@ -13,13 +13,13 @@ namespace sjtu {
          * 1 registered user
          * 2 Administrator
          */
-        int privilege;
+        char  privilege;
         char name[NAMESIZE];
         char password[PASSSIZE];
         char phone[PHONESIZE];
         char email[EMAILSIZE];
         User()=default;
-        User(const char* N){strcpy(name,N);privilege=1;}
+        User(const char* N){strcpy(name,N);privilege='1';}
         User&operator=(const User &U){
             if(&U==this) return *this;
             privilege=U.privilege;

@@ -14,26 +14,23 @@
 //第一个注册用户id
 #define FIRSTID 2019
 //loc大小
-#define LOCSIZE 20
-
+#define LOCSIZE 16
 //用户name 大小
-#define NAMESIZE 20
+#define NAMESIZE 16
 //用户email大小
-
-
 //火车名字大小
-#define TRAINNAME 30
+#define TRAINNAME 24
 
 #define  EMAILSIZE 20
 //用户电话号码大小
-#define  PHONESIZE 20
+#define  PHONESIZE 12
 //用户密码大小
-#define  PASSSIZE 20
+#define  PASSSIZE 12
 
 //火车ID大小
-#define  IDSIZE 20
+#define  IDSIZE 14
 //价格名称大小
-#define  PRICESIZE 15
+#define  PRICESIZE 14
 //种类大小
 #define  CATSIZE 2
 
@@ -44,10 +41,10 @@
 #define  FILENAME 100
 
 //用户缓存区大小
-#define  UBSIZE 40
+#define  UBSIZE 100
 
 //车站缓存区大小
-#define  STBSIZE 500
+#define  STBSIZE 300
 
 #define  TRAINBppSIZE 4096
 
@@ -55,7 +52,7 @@
 
 #define  TicketBppSIZE 4096
 
-#define  BUFFERSIZE  1200
+#define  BUFFERSIZE  500
 
 #define   REMAINSIZE 800
 
