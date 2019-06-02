@@ -55,7 +55,13 @@ private:
     };
     struct Bufferpool{
         State state = no_used;
-        char buffer[node_size + sizeof(key_t) + sizeof(value_t)];
+        char *buffer;
+        Bufferpool(){
+            buffer = new char[node_size + sizeof(key_t) + sizeof(value_t)];
+        }
+        ~Bufferpool(){
+            delete []buffer;
+        }
     };
     Bufferpool *bufferpool;
 
