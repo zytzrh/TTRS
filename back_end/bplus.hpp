@@ -13,7 +13,7 @@
 #include "../STLITE/utility.hpp"
 constexpr off_t invalid_off = 0xdeadbeef;
 //
-template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 233, size_t supersize = 8666388600,
+template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 233, size_t supersize = 866638860,
         class Compare = std::less<key_t>>
 class bptree{
     const char tree_t = '0';
