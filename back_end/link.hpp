@@ -283,14 +283,14 @@ namespace sjtu{
         void read_block(const myblock&B,sjtu::vector<value1>& V1,sjtu::vector<value2> &V2){
             flushbuffer();
             fseek(F,B.pos,SEEK_SET);
-            char * tmp=new char[B.S1*bs1+B.S2*bs2+1];
-            fread(tmp,1,B.S1*bs1+B.S2*bs2,F);
-            memcpy(buffer1,tmp,B.S1*bs1);
-            memcpy(buffer2,tmp+B.S1*bs1,B.S2*bs2);
-            /*
+            //char * tmp=new char[B.S1*bs1+B.S2*bs2+1];
+            //fread(tmp,1,B.S1*bs1+B.S2*bs2,F);
+            //memcpy(buffer1,tmp,B.S1*bs1);
+            //memcpy(buffer2,tmp+B.S1*bs1,B.S2*bs2);
+            
             fread(buffer1,bs1,B.S1,F);
             fread(buffer2,bs2,B.S2,F);
-            */
+            
             for(int i=0;i<B.S1;++i){
                 V1.push_back(buffer1[i]);
             }
@@ -298,7 +298,7 @@ namespace sjtu{
                 V2.push_back(buffer2[j]);
             }
 
-            delete[] tmp;
+            //delete[] tmp;
         }
         void read_block(const myblock&B,sjtu::vector<value1>& V1){
             flushbuffer();
