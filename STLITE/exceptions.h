@@ -8,6 +8,8 @@
 #include <cstddef>
 #include <cstring>
 #include <string>
+
+
     class exception {
     protected:
         const std::string variant = "";
