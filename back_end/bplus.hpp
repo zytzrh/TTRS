@@ -13,7 +13,7 @@
 #include "../STLITE/utility.hpp"
 constexpr off_t invalid_off = 0xdeadbeef;
 //
-template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 233, size_t supersize = 866638860,
+template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 977, size_t supersize = 866638860,
         class Compare = std::less<key_t>>
 class bptree{
     const char tree_t = '0';
@@ -56,8 +56,8 @@ private:
     struct Bufferpool{
         State state = no_used;
         char buffer[node_size + sizeof(key_t) + sizeof(value_t)];
-    }bufferpool[poolsize];
-
+    };
+    Bufferpool *bufferpool;
 
     char *buffer;
 
@@ -597,6 +597,7 @@ public:
         filename = new char[strlen(fname) + 1];
         strcpy(filename, fname);
         quickbuf = new char[supersize];
+        bufferpool = new Bufferpool[poolsize];
         if(!file){
             file = fopen(fname, "wb+");
             alsize = 0;
@@ -622,6 +623,7 @@ public:
         if (file) fclose(file);
         delete filename;
         delete []quickbuf;
+        delete []bufferpool;
     }
     //∫Ø ˝ø™ º±£ª§£¨Ω·Œ≤Œﬁ±£ª§
     bool _insert(const key_t &key, const value_t &v){
