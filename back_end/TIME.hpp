@@ -22,6 +22,7 @@ namespace  sjtu {
         list[3]='0'+minute/10;
         list[5]='\0';
     }
+
     /*
      * The function convert the string of date "XXXX:XX:ab" to an integer  ab-1
      */
@@ -52,6 +53,8 @@ namespace  sjtu {
            tmp.pos+=k;
            return tmp;
     }
+
+
 //时间类
     struct Time {
         int hour;

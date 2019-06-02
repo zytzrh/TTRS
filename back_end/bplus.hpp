@@ -13,14 +13,14 @@
 #include "../STLITE/utility.hpp"
 constexpr off_t invalid_off = 0xdeadbeef;
 //
-template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 79, size_t supersize = 1638860,
+template <class key_t, class value_t, size_t node_size = 4096, size_t poolsize = 233, size_t supersize = 16638860,
         class Compare = std::less<key_t>>
 class bptree{
     const char tree_t = '0';
     const char block_t = '1';
     //const char blank_t = '2';
 private:
-    char quickbuf[supersize];
+    char* quickbuf;
     size_t quicksize;
     const size_t quick_max;
     bool isquick;
@@ -33,7 +33,6 @@ private:
     off_t  head;
     off_t  tail;
     off_t  root;
-
     FILE * file;
     char * filename;
 
@@ -597,6 +596,7 @@ public:
         file = fopen(fname, "rb+");
         filename = new char[strlen(fname) + 1];
         strcpy(filename, fname);
+        quickbuf = new char[supersize];
         if(!file){
             file = fopen(fname, "wb+");
             alsize = 0;
@@ -621,6 +621,7 @@ public:
         save_index();
         if (file) fclose(file);
         delete filename;
+        delete []quickbuf;
     }
     //∫Ø ˝ø™ º±£ª§£¨Ω·Œ≤Œﬁ±£ª§
     bool _insert(const key_t &key, const value_t &v){
