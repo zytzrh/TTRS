@@ -287,10 +287,10 @@ namespace sjtu{
             fread(tmp,1,B.S1*bs1+B.S2*bs2,F);
             memcpy(buffer1,tmp,B.S1*bs1);
             memcpy(buffer2,tmp+B.S1*bs1,B.S2*bs2);
-            
-            //fread(buffer1,bs1,B.S1,F);
-            //fread(buffer2,bs2,B.S2,F);
-            
+            /*
+            fread(buffer1,bs1,B.S1,F);
+            fread(buffer2,bs2,B.S2,F);
+            */
             for(int i=0;i<B.S1;++i){
                 V1.push_back(buffer1[i]);
             }
